@@ -1,0 +1,16 @@
+.topContainer{
+    padding: 10px;
+    border-bottom: 1px solid white;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.dataID{
+    width: 50px;
+    flex:1 auto;
+}
+
+.names{
+    flex: 3 auto;
+}
