@@ -4,16 +4,17 @@ import DataItem from './DataItem'
 
 const DataDisplay = () => {
 
-    const [displayData, setDisplayData] = useState();
+    const [displayData, setDisplayData] = useState([]);
 
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5001/dfsdes',{method:'GET'});
+            const response = await fetch('http://localhost:5001/names',{method:'GET'});
 
             const data = await response.json();
 
             console.log(data);
+            setDisplayData(data);
 
         } catch (error) {
             console.log("Error fetching data: ", error)
@@ -29,7 +30,12 @@ const DataDisplay = () => {
             <h2>MongoDB Data</h2>
             <button className={style.getDataButton} onClick={getData}>Get Data</button>
             <div className={style.dataOutput}>
-                <DataItem data={displayData}/>
+                {displayData &&
+                    displayData.map((nameData, index) => {
+                       
+                        return <DataItem key={index} nameData={nameData}/>
+                    })
+                }
             </div>
         </div>
     )

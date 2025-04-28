@@ -7,10 +7,14 @@
 }
 
 .dataID{
-    width: 50px;
-    flex:1 auto;
+    text-align: left;
+    width: 50%;
+}
+
+span{
+    font-size: .8rem;
 }
 
 .names{
-    flex: 3 auto;
+    width: 50%;
 }
